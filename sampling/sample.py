@@ -30,5 +30,5 @@ print("Sample:\n", sample)
 # larger than the population, you will need to use the `replace=True` parameter.
 #
 # # Sample Size: 25 + 5 replacement samples
-# sample_size = 30
-# sample = df.sample(30, replace=True)
+# SAMPLE_SIZE = 30
+# sample = df.sample(SAMPLE_SIZE, replace=True)
