@@ -1,3 +1,7 @@
+"""
+Extensible dashboard for project status.
+"""
+
 # Import packages
 from dash import Dash, html, dash_table, dcc
 import pandas as pd
@@ -32,7 +36,12 @@ app.layout = [
 			),
 			style = {'flex-grow':'1'}
 		)
-	], style = {'display':'flex', 'flex-wrap':'wrap', 'justify-content':'space-between', 'align-items':'center'}),
+	],
+	style = {
+		'display':'flex',
+		'flex-wrap':'wrap',
+		'justify-content':'space-between',
+'align-items':'center'}),
 	dcc.Graph(
 		figure=px.pie(
 			df,
