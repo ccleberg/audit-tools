@@ -1,8 +1,12 @@
+"""
+Creates a sample from a CSV or Excel file based on user-defined SAMPLE_SIZE.
+"""
+
 # Import packages
 import pandas as pd
 
 # Define the sample size
-sample_size = 25
+SAMPLE_SIZE = 25
 
 # Import the data to a pandas DataFrame
 df = pd.read_csv("FILENAME_GOES_HERE.csv")
@@ -15,8 +19,8 @@ df = pd.read_csv("FILENAME_GOES_HERE.csv")
 print("Dataframe size (rows, columns): ", df.shape)
 
 # Sample
-sample = df.sample(sample_size)
-print("Sample size: ", sample_size)
+sample = df.sample(SAMPLE_SIZE)
+print("Sample size: ", SAMPLE_SIZE)
 print("Sample:\n", sample)
 
 # ALTERNATIVE: Replacement Samples
