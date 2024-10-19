@@ -1,0 +1,26 @@
+#+title: README
+
+* Background
+
+I have been an auditor for years, starting with operational/financial audits and 
+quickly transitioning to technology audits early in my career.
+
+While performing technology audits, attestations, etc., you will find that it 
+requires a lot of manual effort if you don't use the right tools to automate as 
+much as possible.
+
+This repository serves as my personal collection of audit tools that I want to 
+save and re-use later.
+
+* Development
+
+** Python
+
+For the Python scripts, use the following to activate a virtual environment for 
+consistent packing:
+
+#+begin_src sh
+python3 -m venv venv
+source ./venv/bin/activate
+pip install PACKAGE_NAME
+#+end_src
