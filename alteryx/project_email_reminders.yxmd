@@ -1,0 +1,589 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="210" width="844" height="269" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Data Preparation</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="79" y="259" width="382" height="177" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Data Prep</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="1">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+                <Position x="104" y="320" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Passwords />
+                  <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">.\project_data.xlsx|||`Tracker$`</File>
+                  <FormatSpecificOptions>
+                    <FirstRowData>False</FirstRowData>
+                    <ImportLine>1</ImportLine>
+                  </FormatSpecificOptions>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>project_data.xlsx
+Query=`Tracker$`</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="Control Objective" size="255" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="V_String" />
+                    <Field name="Control ID" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="Double" />
+                    <Field name="Control Wording" size="255" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="V_String" />
+                    <Field name="Date Due" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="Date" />
+                    <Field name="Days Past Due" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="Double" />
+                    <Field name="Projected Hours " source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="Double" />
+                    <Field name="High Priority?" size="255" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="V_String" />
+                    <Field name="Preparer" size="255" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="V_String" />
+                    <Field name="Reviewer" size="255" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="V_String" />
+                    <Field name="Status " size="255" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="V_String" />
+                    <Field name="Actual Hours Worked" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="Double" />
+                    <Field name="Comments" source="File: C:\Users\ccleberg\Downloads\project_data.xlsx|||`Tracker$`" type="Double" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+            </Node>
+            <Node ToolID="4">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+                <Position x="224" y="320" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Mode>Simple</Mode>
+                  <Simple>
+                    <Operator>=</Operator>
+                    <Field><![CDATA[Status ]]></Field>
+                    <Operands>
+                      <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                      <DateType>fixed</DateType>
+                      <PeriodDate>2024-10-19 12:53:32</PeriodDate>
+                      <PeriodType>
+                      </PeriodType>
+                      <PeriodCount>0</PeriodCount>
+                      <Operand>Complete</Operand>
+                      <StartDate>2024-10-19 12:53:32</StartDate>
+                      <EndDate>2024-10-19 12:53:32</EndDate>
+                    </Operands>
+                  </Simple>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+            </Node>
+            <Node ToolID="30">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+                <Position x="332" y="308" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <FormulaFields>
+                    <FormulaField expression="&quot;Project ABC&quot;" field="Report" size="1073741823" type="V_WString" />
+                  </FormulaFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText><![CDATA[Report = "Project ABC"
+]]></DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="461" y="259" width="412" height="195" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Data Aggregation</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="28">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+                <Position x="486" y="318" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <ByName_ErrorMode>Warning</ByName_ErrorMode>
+                  <ByName_OutputMode>All</ByName_OutputMode>
+                  <Mode>ByName</Mode>
+                  <SetOutputOrder value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+            </Node>
+            <Node ToolID="42">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="776" y="308" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="1033">
+                    <Field field="Report" order="Ascending" />
+                    <Field field="Control ID" order="Ascending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Report - Ascending
+Control ID - Ascending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+            <Node ToolID="62">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="630" y="318" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="931" y="54" width="445" height="422" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Email Prep</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="37">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+            <Position x="1064" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Images />
+              <Output>Text</Output>
+              <HeaderMode value="False" />
+              <RawMode value="False" />
+              <ValidatePCXML value="True" />
+              <Message />
+              <RichTextMode value="True" />
+              <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\fs20 Hello! \par
+ \par
+There are controls ready for your review in for Project ABC. Please review the controls below that have been marked ready for review.\par
+ \par
+If you have any questions, please reach out to the assigned auditor.\par
+\par
+}
+]]></RichTextString>
+              <Styles>
+                <Style Name="TextStyle" />
+              </Styles>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Hello! 
+ 
+There are controls r...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1292" y="392" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\ccleberg\AppData\Local\Temp\Engine_33292_bcdd2c4a02104da49c1cc435bd1e7903_\Engine_27588_738ee9e53cd4469abbbe6619fe3fba94_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="55">
+          <GuiSettings Plugin="VisualLayout">
+            <Position x="1160" y="308" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <LayoutFields>
+                <Document>
+                  <TempFileType>pdf</TempFileType>
+                  <PortraitMode value="true" />
+                  <RenderType>PDF</RenderType>
+                  <PaperType bottom="48" height="1056" left="48" right="48" top="48" width="816">
+                    <PageType>Letter (8.5in x 11in)</PageType>
+                    <MarginType>0.5in</MarginType>
+                  </PaperType>
+                </Document>
+                <Layout>
+                  <Node fusedChildren="false" key="1" orientation="vertical" repeatDirection="vertical">
+                    <Node connectionName="#1" fieldName="Text" height="129" isFused="false" isLocked="true" key="6" left="0" orientation="horizontal" repeatDirection="vertical" source="Report:Text:" subWidth0="717" subWidthCount="1" top="0" width="717" />
+                    <Node connectionName="#2" fieldName="Text" height="39" isFused="false" isLocked="true" key="5" left="0" orientation="horizontal" repeatDirection="vertical" source="Report:Text:" subWidth0="719" subWidthCount="1" top="0" width="719" />
+                    <Node connectionName="#3" fieldName="Table" height="157" isFused="false" isLocked="true" key="7" left="0" orientation="horizontal" repeatDirection="vertical" source="Report:Table:Basic:" subWidth0="719" subWidthCount="1" top="0" width="719" />
+                    <Node connectionName="#4" fieldName="Text" height="39" isFused="false" isLocked="true" key="8" left="0" orientation="horizontal" repeatDirection="vertical" source="Report:Text:" subWidth0="719" subWidthCount="1" top="0" width="719" />
+                    <Node connectionName="#5" fieldName="Table" height="2477" isFused="false" isLocked="true" key="9" left="0" orientation="horizontal" repeatDirection="vertical" source="Report:Table:Basic:" subWidth0="719" subWidthCount="1" top="0" width="719" />
+                    <Node connectionName="#6" fieldName="Text" height="39" isFused="false" isLocked="true" key="10" left="0" orientation="horizontal" repeatDirection="vertical" source="Report:Text:" subWidth0="720" subWidthCount="1" top="0" width="720" />
+                    <Node connectionName="#7" fieldName="Table" height="509" isFused="false" isLocked="true" key="11" left="0" orientation="horizontal" repeatDirection="vertical" source="Report:Table:Basic:" subWidth0="719" subWidthCount="1" top="0" width="719" />
+                  </Node>
+                </Layout>
+                <TempFiles>{"#1":"C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Engine_33292_bcdd2c4a02104da49c1cc435bd1e7903_\\Engine_27588_42622a1cc4ff449b8dbf0775431b6b04_.yxdb","#2":"C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Engine_33292_bcdd2c4a02104da49c1cc435bd1e7903_\\Engine_27588_506c5ac447d540c79c0a09d134fa8aa8_.yxdb","#3":"C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Engine_33292_bcdd2c4a02104da49c1cc435bd1e7903_\\Engine_27588_5cf2f6bab1754ad691a120444efb937e_.yxdb"}</TempFiles>
+                <OriginalSnippets>{"#7":{"Table":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_fdc51aea-e417-4e63-bdfa-496f5cebef13_.html"]},"#3":{"Table":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_3cf98f14-d930-43a4-8f9e-717a1dd9ac95_.html"]},"#4":{"Text":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_83a50936-df05-4480-9978-6ebf457ba092_.html"]},"#5":{"Table":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_019435bd-8acd-492f-b597-5ec856b579ad_.html"]},"#1":{"Text":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_6e98ad4f-5e5a-455d-b779-9ec2eb51a604_.html"]},"#6":{"Text":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_d8ac52c5-5fb1-4f80-aa81-ab346846217c_.html"]},"#2":{"Text":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_3d8e002f-d26e-400d-973c-dda579b3be4a_.html"]}}</OriginalSnippets>
+                <OriginalThumbnails>{"#7":{"Table":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_98db2716-3021-43cb-baf2-f547aa52e090_.html"]},"#3":{"Table":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_20e06e2d-b19e-4df5-ab46-238e542f8e95_.html"]},"#4":{},"#5":{"Table":["C:\\Users\\ccleberg\\AppData\\Local\\Temp\\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_\\Alteryx_32232_f3938f01-abea-4b6d-b04a-67e7adc0d32c_.html"]},"#1":{},"#6":{},"#2":{}}</OriginalThumbnails>
+                <AllowResizing>true</AllowResizing>
+                <CanJoin>false</CanJoin>
+                <VisFolderPath>C:\Users\ccleberg\AppData\Local\Temp\Alteryx_32232_da5c93b8-2283-4e02-8836-e94a526c76f8_</VisFolderPath>
+                <NumDeletions>2</NumDeletions>
+                <NumTinaToggleUses>0</NumTinaToggleUses>
+                <NumSnippetMoves>0</NumSnippetMoves>
+                <NumSnippetRearrangements>0</NumSnippetRearrangements>
+                <NumIncomingConnections>7</NumIncomingConnections>
+              </LayoutFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerVisualLayout" />
+        </Node>
+        <Node ToolID="56">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="956" y="308" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>Report</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2024-09-16 16:12:09</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Project ABC</Operand>
+                  <StartDate>2024-09-16 16:12:09</StartDate>
+                  <EndDate>2024-09-16 16:12:09</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Report] = "Project ABC"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="60">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+            <Position x="1064" y="236" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Images />
+              <Output>Text</Output>
+              <HeaderMode value="False" />
+              <RawMode value="False" />
+              <ValidatePCXML value="True" />
+              <Message />
+              <RichTextMode value="True" />
+              <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\lang1033\fs24 <hr/> \cf1\lang1046\ul\b\fs20\par
+\par
+Project ABC\cf0\par
+}
+]]></RichTextString>
+              <Styles>
+                <Style Name="TextStyle" />
+              </Styles>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[ 
+
+Project ABC]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+        </Node>
+        <Node ToolID="61">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+            <Position x="1064" y="356" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TableMode>Basic</TableMode>
+              <GroupingFields orderChanged="False" />
+              <Width>100%</Width>
+              <ShowHeader value="True" />
+              <ShowBarGraph value="False" />
+              <TableFields orderChanged="False">
+                <Field name="Report" selected="True" Alignment="Left" />
+                <Field name="Control ID" selected="True" Alignment="Right" />
+                <Field name="*Unknown" selected="True" Alignment="Right" />
+              </TableFields>
+              <TableStyles>
+                <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+                <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+                <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+                <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+              </TableStyles>
+              <StyleRules />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1387" y="55" width="141" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Send Email</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="21">
+          <GuiSettings Plugin="PortfolioPluginsGui.Email.Email">
+            <Position x="1412" y="104" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SMTPServerName>SMTPOUT</SMTPServerName>
+              <ToIsField value="False" />
+              <To>you@example.com</To>
+              <CcIsField value="False" />
+              <Cc />
+              <BccIsField value="False" />
+              <Bcc />
+              <FromIsField value="False" />
+              <From>me@exmaple.com</From>
+              <SubjectIsField value="False" />
+              <Subject>Project Update: Items Ready for Review</Subject>
+              <BodyIsField value="True" />
+              <Body>Layout</Body>
+              <UserName />
+              <Enabled>True</Enabled>
+              <Password />
+              <Port>25</Port>
+              <Encryption>None</Encryption>
+              <SMTPAuth value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxComposerEmail" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="True" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="True" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>project_email_reminders</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="63bbab31-92b1-4fbe-823a-a579f03bc0a8" />
+      <Telemetry>
+        <PreviousWorkflowId value="e7c0fc19-f895-4a47-b0e1-9f542ab7e088" />
+        <OriginWorkflowId value="0f2664bb-ccd6-43c9-ae98-a3df272839f0" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
