@@ -23,4 +23,5 @@ consistent packing:
 python3 -m venv venv
 source ./venv/bin/activate
 pip install PACKAGE_NAME
+python3 ./PYTHON_SCRIPT.py
 #+end_src
