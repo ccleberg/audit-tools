@@ -14,12 +14,12 @@
 
 name: Pysa
 
-on:
-  workflow_dispatch:
-  push:
-    branches: [ $default-branch, $protected-branches ]
-  pull_request:
-    branches: [ $default-branch ]
+on: [push]
+#  workflow_dispatch:
+#  push:
+#    branches: [ $default-branch, $protected-branches ]
+#  pull_request:
+#    branches: [ $default-branch ]
 
 permissions:
     contents: read
