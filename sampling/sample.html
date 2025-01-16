@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sampling Tool</title>
+	<style>
+        form {
+            display: table;
+        }
+        form div {
+            display: table-row;
+        }
+        label, input {
+            display: table-cell;
+            margin-bottom: 10px;
+        }
+        label {
+            padding-right: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Sampling Tool</h1>
+<p>This sampling tool provides a quick and easy way to generate
+psuedo-random samples within a defined range. Simply enter the size of your
+population, enter your desired number of samples, and generate!</p>
+<p>To reproduce and validate a previously-generated sample, please ensure
+you have entered the seed value correctly when submitting the form. All
+inputs must match the previously-generated sample's inputs to generate the
+same output.</p>
+<form id="sampleForm" onsubmit="return handleFormSubmit(event)">
+	<div>
+		<label for="populationSize">Population Size*:</label>
+		<input type="number" id="populationSize" name="populationSize" min="1" autofocus required>
+	</div>
+	<div>
+		<label for="sampleSize">Sample Size*:</label>
+		<input type="number" id="sampleSize" name="sampleSize" min="1" required>
+	</div>
+	<div>
+		<label for="replacementSize">Replacement Sample Size:</label>
+		<input type="number" id="replacementSize" name="replacementSize" min="0">
+	</div>
+	<div>
+		<label for="customSeed">Custom Seed (optional):</label>
+		<input type="number" id="customSeed" name="customSeed" min="0">
+	</div>
+	<div>
+		<input type="submit" value="Calculate">
+	</div>
+	<p><i>* Indicates a required field</i></p>
+</form>
+<hr>
+<div id="results"></div>
+<script>
+function seededRandom(seed) {
+    let s = seed % 2147483647;
+    return function() {
+        s = (s * 16807) % 2147483647;
+        return (s - 1) / 2147483646;
+    };
+}
+
+function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    const customSeedInput = document.getElementById('customSeed').value;
+    const seed = customSeedInput ? parseInt(customSeedInput) : Math.floor(Math.random() * 1000000); // Use custom seed if provided
+    generateSamples(seed); // Call the function with the seed
+}
+
+function generateSamples(seed) {
+    const populationSize = parseInt(document.getElementById('populationSize').value);
+    const sampleSize = parseInt(document.getElementById('sampleSize').value);
+    const replacementSize = parseInt(document.getElementById('replacementSize').value || 0);
+    const resultsDiv = document.getElementById('results');
+
+    // Clear previous results
+    resultsDiv.innerHTML = '';
+
+    // Validate inputs
+    if (isNaN(populationSize) || isNaN(sampleSize) || populationSize <= 0 || sampleSize <= 0) {
+        alert("Please enter valid numbers for required fields.");
+        return;
+    }
+    if (sampleSize + replacementSize > populationSize) {
+        alert("Not enough unique samples available. Reduce the sample size or replacement size.");
+        return;
+    }
+
+    // Create seeded random function
+    const random = seededRandom(seed);
+
+    // Generate an array of population numbers
+    const population = Array.from({ length: populationSize }, (_, i) => i + 1);
+
+    // Shuffle the population array using the seeded random function
+    const shuffledPopulation = population
+        .map(value => ({ value, sort: random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
+
+    // Select original samples
+    const originalSamples = shuffledPopulation.slice(0, sampleSize);
+
+    // Select replacement samples
+    const replacementSamples = shuffledPopulation.slice(sampleSize, sampleSize + replacementSize);
+
+    // Display the seed
+    const seedInfo = document.createElement('p');
+    seedInfo.textContent = `Seed: ${seed}`;
+    resultsDiv.appendChild(seedInfo);
+
+    // Generate tables
+    const originalTable = createTable(originalSamples, "Original Samples");
+    const replacementTable = createTable(replacementSamples, "Replacement Samples");
+
+    // Append tables to the results div
+    resultsDiv.appendChild(originalTable);
+    if (replacementSamples.length > 0) {
+        resultsDiv.appendChild(replacementTable);
+    }
+}
+
+function createTable(dataArray, tableTitle) {
+    const table = document.createElement('table');
+    const caption = document.createElement('caption');
+    caption.textContent = tableTitle;
+    table.appendChild(caption);
+
+    const headerRow = document.createElement('tr');
+    const indexHeader = document.createElement('th');
+    indexHeader.textContent = 'Index';
+    const sampleHeader = document.createElement('th');
+    sampleHeader.textContent = 'Sample';
+    headerRow.appendChild(indexHeader);
+    headerRow.appendChild(sampleHeader);
+    table.appendChild(headerRow);
+
+    dataArray.forEach((sample, index) => {
+        const row = document.createElement('tr');
+        const indexCell = document.createElement('td');
+        const sampleCell = document.createElement('td');
+        indexCell.textContent = index + 1;
+        sampleCell.textContent = sample;
+        row.appendChild(indexCell);
+        row.appendChild(sampleCell);
+        table.appendChild(row);
+    });
+
+    return table;
+}
+</script>
+</body>
+</html>

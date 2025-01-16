@@ -1,0 +1,32 @@
+#+title: Sampling Tools
+
+* =sample.py=
+
+#+begin_src sh
+python ./sample.py
+#+end_src
+
+#+begin_src text
+Dataframe size (rows, columns):  (100, 9)
+Sample size:  5
+Sample:
+     Index  Organization Id  ...                                       Industry Number of employees
+79     80  cBa7EFe5D05Adaf  ...                              Online Publishing                7805
+97     98  E7df80C60Abd7f9  ...                                Broadcast Media                 236
+3       4  2bFC1Be8a4ce42f  ...                                     Automotive                 921
+42     43  A2D89Ab9bCcAd4e  ...  Capital Markets / Hedge Fund / Private Equity                3816
+70     71  32BB9Ff4d939788  ...                                       Wireless                6146
+
+[5 rows x 9 columns]
+#+end_src
+
+* =sample.html=
+
+This is an interactive web page that allows users to submit their population
+size, sample size(s), and generate a psuedo-random sample list of numbers to use
+when sampling against their population.
+
+Samples can be re-generated and validated using the seed numbers provided during 
+the original generation.
+
+[[sample-html.png]]
