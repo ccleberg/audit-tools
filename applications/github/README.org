@@ -81,7 +81,7 @@ Files changed:
     Additions: 7, Deletions: 0, Changes: 7
 
 Commit SHA: 6bfde238a2a34a93ce8ee02082eaf4ab3c189368
-Author: Christian Cleberg <hello@cleberg.net>
+Author: Christian Cleberg <hello@cmc.pub>
 Date: 2024-10-19T20:56:50Z
 Message: fixes
 URL: https://github.com/phryq/demo-repository/commit/6bfde238a2a34a93ce8ee02082eaf4ab3c189368
