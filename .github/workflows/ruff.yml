@@ -1,6 +1,9 @@
-name: Pylint
+name: Ruff
 
-on: [push]
+on:
+  push:
+    paths:
+      - '**.py'
 
 jobs:
   build:
