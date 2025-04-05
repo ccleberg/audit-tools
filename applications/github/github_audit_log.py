@@ -6,15 +6,16 @@ NOTE: REQUIRES A GITHUB ENTERPRISE SUBSCRIPTION TO ACCESS THE API.
 
 import requests
 
-GITHUB_TOKEN = 'your_personal_access_token'
-ORGANIZATION = 'your_organization'
+GITHUB_TOKEN = "your_personal_access_token"
+ORGANIZATION = "your_organization"
 TIMEOUT = 30
 
 # Headers for authentication
 headers = {
-    'Authorization': f'token {GITHUB_TOKEN}',
-    'Accept': 'application/vnd.github.v3+json'
+    "Authorization": f"token {GITHUB_TOKEN}",
+    "Accept": "application/vnd.github.v3+json",
 }
+
 
 def get_audit_log_events(org, actions):
     """
@@ -23,8 +24,10 @@ def get_audit_log_events(org, actions):
     events = []
     page = 1
     while True:
-        url = (f'https://api.github.com/orgs/{org}/audit-log?page={page}&per_page=100'
-               f'&action={",".join(actions)}')
+        url = (
+            f"https://api.github.com/orgs/{org}/audit-log?page={page}&per_page=100"
+            f"&action={','.join(actions)}"
+        )
         response = requests.get(url, headers=headers, timeout=TIMEOUT)
         response.raise_for_status()
         page_events = response.json()
@@ -34,12 +37,15 @@ def get_audit_log_events(org, actions):
         page += 1
     return events
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     try:
         # Define the actions to filter
-        action_filters = ['protected_branch',
-                   'repository_branch_protection_evaluation',
-                   'repository_ruleset']
+        action_filters = [
+            "protected_branch",
+            "repository_branch_protection_evaluation",
+            "repository_ruleset",
+        ]
 
         # Get audit log events for the specified actions
         audit_log_events = get_audit_log_events(ORGANIZATION, action_filters)
