@@ -6,7 +6,8 @@ Checks SQL Server user data for compliance with Windows policies.
 import pandas as pd
 
 # Load the data into a pandas DataFrame
-df_input = pd.read_csv('./data.csv')
+df_input = pd.read_csv("./data.csv")
+
 
 # Function to apply rules and generate report
 def apply_rules_and_report(df):
@@ -22,44 +23,45 @@ def apply_rules_and_report(df):
     report = []
     for _, row in df.iterrows():
         result = {
-            'Name': row['name'],
-            'Type Check': '',
-            'Policy Check': '',
-            'Expiration Check': '',
-            'Reason': ''
+            "Name": row["name"],
+            "Type Check": "",
+            "Policy Check": "",
+            "Expiration Check": "",
+            "Reason": "",
         }
 
         # Check the type_desc
-        if row['type_desc'] == 'SQL_LOGIN':
-            result['Type Check'] = 'SQL_LOGIN'
-        elif row['type_desc'] == 'WINDOWS_LOGIN':
-            result['Type Check'] = 'N/A'
-            result['Reason'] = 'Refer to Windows password policy.'
+        if row["type_desc"] == "SQL_LOGIN":
+            result["Type Check"] = "SQL_LOGIN"
+        elif row["type_desc"] == "WINDOWS_LOGIN":
+            result["Type Check"] = "N/A"
+            result["Reason"] = "Refer to Windows password policy."
         else:
-            result['Type Check'] = 'Manual Review'
-            result['Reason'] = 'Reviewer to manually review.'
+            result["Type Check"] = "Manual Review"
+            result["Reason"] = "Reviewer to manually review."
 
         # Check if password policy is enforced
-        if row['is_policy_checked'] == 1:
-            result['Policy Check'] = 'PASS'
-            result['Reason'] += '''Password policy is enforced. Reviewer to
-            check the assigned policy.'''
+        if row["is_policy_checked"] == 1:
+            result["Policy Check"] = "PASS"
+            result["Reason"] += """Password policy is enforced. Reviewer to
+            check the assigned policy."""
         else:
-            result['Policy Check'] = 'FAIL'
-            result['Reason'] += 'Password policy is not enforced.'
+            result["Policy Check"] = "FAIL"
+            result["Reason"] += "Password policy is not enforced."
 
         # Check if password expiration is enforced
-        if row['is_expiration_checked'] == 1:
-            result['Expiration Check'] = 'PASS'
-            result['Reason'] += '''Password expiration is enforced. Reviewer to
-            check the expiration policy.'''
+        if row["is_expiration_checked"] == 1:
+            result["Expiration Check"] = "PASS"
+            result["Reason"] += """Password expiration is enforced. Reviewer to
+            check the expiration policy."""
         else:
-            result['Expiration Check'] = 'FAIL'
-            result['Reason'] += 'Password expiration is not enforced.'
+            result["Expiration Check"] = "FAIL"
+            result["Reason"] += "Password expiration is not enforced."
 
         report.append(result)
 
     return report
+
 
 # Main function to run the script
 def main():
@@ -72,6 +74,7 @@ def main():
 
     # Print the report
     print(report_df)
+
 
 if __name__ == "__main__":
     main()
