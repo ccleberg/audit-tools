@@ -1,9 +1,49 @@
 #+title: GitLab Scripts
 
-* =gitlab_admins.py=
+* =approvals.py=
 
 #+begin_src sh
-python ./gitlab_admins.py
+python ./approvals.py
+#+end_src
+
+#+begin_src text
+# TODO: Test result live and provide results here.
+#+end_src
+
+* =branch_protections.py=
+
+#+begin_src sh
+python ./branch_protections.py
+#+end_src
+
+#+begin_src text
+# TODO: Test result live and provide results here.
+#+end_src
+
+* =passwords.py=
+
+#+begin_src sh
+python ./passwords.py
+#+end_src
+
+#+begin_src text
+# TODO: Test result live and provide results here.
+#+end_src
+
+* =provisioning.py=
+
+#+begin_src sh
+python ./provisioning.py
+#+end_src
+
+#+begin_src text
+# TODO: Test result live and provide results here.
+#+end_src
+
+* =users.py=
+
+#+begin_src sh
+python ./users.py
 #+end_src
 
 #+begin_src text
