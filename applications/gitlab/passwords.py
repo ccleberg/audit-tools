@@ -20,8 +20,10 @@ if __name__ == "__main__":
         settings = response.json()
         password_length = settings.get("password_length", "Not set")
         password_complexity = settings.get("password_complexity", "Not set")
-        
+
         print(f"Password Length: {password_length}")
         print(f"Password Complexity: {password_complexity}")
     else:
-        print(f"Failed to fetch application settings: {response.status_code}, {response.text}")
+        print(
+            f"Failed to fetch application settings: {response.status_code}, {response.text}"
+        )

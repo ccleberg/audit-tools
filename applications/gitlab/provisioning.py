@@ -18,12 +18,14 @@ if __name__ == "__main__":
     if response.status_code == 200:
         audit_events = response.json()
         for event in audit_events:
-            if event['entity_type'] == 'User':
-                action = event['action']
-                username = event['target_details']
-                created_at = event['created_at']
-                timestamp = event['created_at']
-                if action in ['create', 'destroy']:
-                    print(f"Action: {action}, Username: {username}, Date: {created_at}, Timestamp: {timestamp}")
+            if event["entity_type"] == "User":
+                action = event["action"]
+                username = event["target_details"]
+                created_at = event["created_at"]
+                timestamp = event["created_at"]
+                if action in ["create", "destroy"]:
+                    print(
+                        f"Action: {action}, Username: {username}, Date: {created_at}, Timestamp: {timestamp}"
+                    )
     else:
         print(f"Failed to fetch audit events: {response.status_code}, {response.text}")

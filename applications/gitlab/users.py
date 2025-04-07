@@ -14,21 +14,27 @@ TIMEOUT = 30
 
 HEADERS = {"PRIVATE-TOKEN": PRIVATE_TOKEN}
 
+
 def get_members(url, name):
     response = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
     if response.status_code == 200:
         members = response.json()
         print(f"\n{name} Members:")
         for member in members:
-            print(f"Username: {member['username']}, Access Level: {member['access_level']}")
+            print(
+                f"Username: {member['username']}, Access Level: {member['access_level']}"
+            )
     else:
-        print(f"Failed to fetch members for {name}: {response.status_code}, {response.text}")
+        print(
+            f"Failed to fetch members for {name}: {response.status_code}, {response.text}"
+        )
+
 
 if __name__ == "__main__":
     for group_id in GROUP_IDS:
         group_url = f"{BASE_URL}/groups/{group_id}/members"
         get_members(group_url, f"Group {group_id}")
-    
+
     for project_id in PROJECT_IDS:
         project_url = f"{BASE_URL}/projects/{project_id}/members"
         get_members(project_url, f"Project {project_id}")

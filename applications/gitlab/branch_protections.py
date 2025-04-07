@@ -18,11 +18,13 @@ if __name__ == "__main__":
     if response.status_code == 200:
         protected_branches = response.json()
         for branch in protected_branches:
-            name = branch['name']
-            push_access_levels = branch['push_access_levels']
-            merge_access_levels = branch['merge_access_levels']
+            name = branch["name"]
+            push_access_levels = branch["push_access_levels"]
+            merge_access_levels = branch["merge_access_levels"]
             print(f"Branch: {name}")
             print(f"  Push Access Levels: {push_access_levels}")
             print(f"  Merge Access Levels: {merge_access_levels}")
     else:
-        print(f"Failed to fetch protected branches: {response.status_code}, {response.text}")
+        print(
+            f"Failed to fetch protected branches: {response.status_code}, {response.text}"
+        )
