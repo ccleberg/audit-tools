@@ -1,7 +1,7 @@
 """
 Gather all members of specified GitLab groups and projects and their access levels.
 
-	Ref: https://docs.gitlab.com/api/members/
+        Ref: https://docs.gitlab.com/api/members/
 """
 
 import requests
