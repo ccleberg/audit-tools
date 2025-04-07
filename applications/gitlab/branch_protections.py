@@ -3,6 +3,7 @@ List all branch protection rules and their configurations in GitLab.
 """
 
 import requests
+import json
 
 BASE_URL = "https://gitlab.com/api/v4"
 PRIVATE_TOKEN = "your_access_token"
@@ -17,13 +18,7 @@ if __name__ == "__main__":
     response = requests.get(URL, headers=HEADERS, timeout=TIMEOUT)
     if response.status_code == 200:
         protected_branches = response.json()
-        for branch in protected_branches:
-            name = branch["name"]
-            push_access_levels = branch["push_access_levels"]
-            merge_access_levels = branch["merge_access_levels"]
-            print(f"Branch: {name}")
-            print(f"  Push Access Levels: {push_access_levels}")
-            print(f"  Merge Access Levels: {merge_access_levels}")
+        print(json.dumps(protected_branches, indent=4))
     else:
         print(
             f"Failed to fetch protected branches: {response.status_code}, {response.text}"

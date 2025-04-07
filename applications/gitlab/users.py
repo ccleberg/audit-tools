@@ -1,7 +1,7 @@
 """
 Gather all members of specified GitLab groups and projects and their access levels.
 
-Ref: https://docs.gitlab.com/api/members/
+	Ref: https://docs.gitlab.com/api/members/
 """
 
 import requests
@@ -31,6 +31,19 @@ def get_members(url, name):
 
 
 if __name__ == "__main__":
+    access_levels = """Access Level Roles:
+    0  : No access
+    5  : Minimal access
+    10 : Guest
+    15 : Planner
+    20 : Reporter
+    30 : Developer
+    40 : Maintainer
+    50 : Owner
+    60 : Admin
+    """
+    print(access_levels)
+
     for group_id in GROUP_IDS:
         group_url = f"{BASE_URL}/groups/{group_id}/members"
         get_members(group_url, f"Group {group_id}")
