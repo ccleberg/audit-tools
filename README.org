@@ -24,7 +24,7 @@ For now, refer to the tree below for application coverage.
 tree -I ".git*|venv"
 #+end_src
 
-#+RESULTS:
+#+begin_src text
 ├── CODEOWNERS
 ├── LICENSE
 ├── README.org
@@ -70,6 +70,7 @@ tree -I ".git*|venv"
     ├── sample-html.png
     ├── sample.html
     └── sample.py
+#+end_src
 
 * Development
 
