@@ -26,7 +26,7 @@ if __name__ == "__main__":
                 if action in ["member_created", "member_destroyed", "member_updated"]:
                     print(
                         f"Group: {GROUP_ID}\n",
-                        f"   {created_at} : Action: {action}, Member: {member_id}, Author: {author}"
+                        f"   {created_at} : Action: {action}, Member: {member_id}, Author: {author}",
                     )
     else:
         print(f"Failed to fetch audit events: {response.status_code}, {response.text}")
