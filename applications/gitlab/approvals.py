@@ -20,8 +20,18 @@ if __name__ == "__main__":
         for rule in approval_rules:
             name = rule["name"]
             approvals_required = rule["approvals_required"]
+            rule_type = rule["rule_type"]
+            protected_branches = rule["protected_branches"]
+            eligible_approvers = rule["eligible_approvers"]
             print(f"Rule: {name}")
             print(f"  Approvals Required: {approvals_required}")
+            print(f"  Rule type: {rule_type}")
+            for branch in protected_branches:
+                branch_name = branch["name"]
+                print(f"  Protected Branch: {branch_name}")
+            for approver in eligible_approvers:
+                approver_username = approver["name"]
+                print(f"  Eligible Approver: {approver_username}")
     else:
         print(
             f"Failed to fetch approval rules: {response.status_code}, {response.text}"
