@@ -12,6 +12,65 @@ much as possible.
 This repository serves as my personal collection of audit tools that I want to 
 save and re-use later.
 
+** Scope
+
+While I created the scripts and tools within this repository specifically for
+the applications I use, I am working to include edge-cases and niche tools as I
+can.
+
+For now, refer to the tree below for application coverage.
+
+#+begin_src shell
+tree -I ".git*|venv"
+#+end_src
+
+#+RESULTS:
+├── CODEOWNERS
+├── LICENSE
+├── README.org
+├── applications
+│   ├── github
+│   │   ├── README.org
+│   │   ├── github_admins.py
+│   │   ├── github_audit_log.py
+│   │   ├── github_branch_protections.py
+│   │   └── github_commits.py
+│   └── gitlab
+│       ├── README.org
+│       ├── approvals.py
+│       ├── branch_protections.py
+│       ├── passwords.py
+│       ├── provisioning.py
+│       └── users.py
+├── databases
+│   ├── administrators
+│   │   ├── mssql_admins.sql
+│   │   ├── mysql_admins.sh
+│   │   ├── mysql_admins.sql
+│   │   ├── mysql_admins_alt.sql
+│   │   ├── oracle_admins.sql
+│   │   └── oracle_admins_alt.sql
+│   └── passwords
+│       └── sql
+│           ├── data.csv
+│           ├── get_data.sql
+│           └── test.py
+├── project_management
+│   ├── alteryx
+│   │   └── project_email_reminders.yxmd
+│   ├── dash
+│   │   └── app.py
+│   └── powerbi
+│       └── project_dashboard
+│           ├── project_dashboard.pbix
+│           └── project_data.xlsx
+├── requirements.txt
+└── sampling
+    ├── README.org
+    ├── sample-html.png
+    ├── sample.html
+    └── sample.py
+
 * Development
 
 ** Python
