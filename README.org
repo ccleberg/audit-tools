@@ -25,36 +25,41 @@ tree -I ".git*|venv"
 #+end_src
 
 #+begin_src text
-├── CODEOWNERS
-├── LICENSE
-├── README.org
+.
 ├── applications
 │   ├── github
-│   │   ├── README.org
 │   │   ├── github_admins.py
 │   │   ├── github_audit_log.py
 │   │   ├── github_branch_protections.py
-│   │   └── github_commits.py
+│   │   ├── github_commits.py
+│   │   └── README.org
 │   └── gitlab
-│       ├── README.org
 │       ├── approvals.py
 │       ├── branch_protections.py
 │       ├── passwords.py
 │       ├── provisioning.py
+│       ├── README.org
 │       └── users.py
+├── CODEOWNERS
 ├── databases
 │   ├── administrators
 │   │   ├── mssql_admins.sql
+│   │   ├── mysql_admins_alt.sql
 │   │   ├── mysql_admins.sh
 │   │   ├── mysql_admins.sql
-│   │   ├── mysql_admins_alt.sql
-│   │   ├── oracle_admins.sql
-│   │   └── oracle_admins_alt.sql
+│   │   ├── oracle_admins_alt.sql
+│   │   └── oracle_admins.sql
 │   └── passwords
 │       └── sql
 │           ├── data.csv
 │           ├── get_data.sql
 │           └── test.py
+├── LICENSE
+├── operating-systems
+│   └── linux
+│       ├── passwords.sh
+│       ├── README.org
+│       └── ssh_root_login.sh
 ├── project_management
 │   ├── alteryx
 │   │   └── project_email_reminders.yxmd
@@ -64,6 +69,7 @@ tree -I ".git*|venv"
 │       └── project_dashboard
 │           ├── project_dashboard.pbix
 │           └── project_data.xlsx
+├── README.org
 ├── requirements.txt
 └── sampling
     ├── README.org
