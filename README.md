@@ -1,30 +1,29 @@
-#+title: README
+# Background
 
-* Background
+I have been an auditor for years, starting with operational/financial
+audits and quickly transitioning to technology audits early in my
+career.
 
-I have been an auditor for years, starting with operational/financial audits and 
-quickly transitioning to technology audits early in my career.
+While performing technology audits, attestations, etc., you will find
+that it requires a lot of manual effort if you don\'t use the right
+tools to automate as much as possible.
 
-While performing technology audits, attestations, etc., you will find that it 
-requires a lot of manual effort if you don't use the right tools to automate as 
-much as possible.
+This repository serves as my personal collection of audit tools that I
+want to save and re-use later.
 
-This repository serves as my personal collection of audit tools that I want to 
-save and re-use later.
+## Scope
 
-** Scope
-
-While I created the scripts and tools within this repository specifically for
-the applications I use, I am working to include edge-cases and niche tools as I
-can.
+While I created the scripts and tools within this repository
+specifically for the applications I use, I am working to include
+edge-cases and niche tools as I can.
 
 For now, refer to the tree below for application coverage.
 
-#+begin_src shell
+```shell
 tree -I ".git*|venv"
-#+end_src
+```
 
-#+begin_src text
+```text
 .
 ├── applications
 │   ├── github
@@ -76,18 +75,18 @@ tree -I ".git*|venv"
     ├── sample-html.png
     ├── sample.html
     └── sample.py
-#+end_src
+```
 
-* Development
+# Development
 
-** Python
+## Python
 
-For the Python scripts, use the following to activate a virtual environment for 
-consistent packing:
+For the Python scripts, use the following to activate a virtual
+environment for consistent packing:
 
-#+begin_src sh
+```shell
 python3 -m venv venv
 source ./venv/bin/activate
 pip install PACKAGE_NAME
 python3 ./PYTHON_SCRIPT.py
-#+end_src
+```
