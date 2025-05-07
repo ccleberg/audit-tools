@@ -36,25 +36,36 @@ tree -I ".git*|venv"
 │       ├── approvals.py
 │       ├── branch_protections.py
 │       ├── passwords.py
+│       ├── pipelines.py
 │       ├── provisioning.py
 │       ├── README.org
+│       ├── repositories.py
 │       └── users.py
 ├── CODEOWNERS
 ├── databases
-│   ├── administrators
-│   │   ├── mssql_admins.sql
+│   ├── mongo
+│   │   ├── admins.py
+│   │   └── README.org
+│   ├── mysql
 │   │   ├── mysql_admins_alt.sql
-│   │   ├── mysql_admins.sh
 │   │   ├── mysql_admins.sql
+│   │   ├── passwords.sql
+│   │   └── README.org
+│   ├── oracle
 │   │   ├── oracle_admins_alt.sql
 │   │   └── oracle_admins.sql
-│   └── passwords
-│       └── sql
+│   ├── postgres
+│   │   ├── admins.sql
+│   │   ├── passwords.sql
+│   │   └── README.org
+│   └── sql
+│       ├── admins.sql
+│       └── passwords
 │           ├── data.csv
 │           ├── get_data.sql
 │           └── test.py
 ├── LICENSE
-├── operating-systems
+├── os
 │   └── linux
 │       ├── passwords.sh
 │       ├── README.org
@@ -68,12 +79,12 @@ tree -I ".git*|venv"
 │       └── project_dashboard
 │           ├── project_dashboard.pbix
 │           └── project_data.xlsx
-├── README.org
+├── README.md
 ├── requirements.txt
 └── sampling
     ├── README.org
-    ├── sample-html.png
     ├── sample.html
+    ├── sample-html.png
     └── sample.py
 ```
 
