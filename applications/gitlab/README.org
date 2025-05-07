@@ -69,6 +69,39 @@ python ./passwords.py
 # TODO: Need access to a self-hosted version of GitLab to test this out.
 #+end_src
 
+* =pipelines.py=
+
+#+begin_src sh
+python ./pipelines.py
+#+end_src
+
+#+begin_src text
+Pipeline ID: 1754222228
+  Status: failed
+  Ref: master
+  Created At: 2025-04-06T03:39:15.065Z
+  Duration: N/A seconds
+  Configuration: N/A
+Pipeline ID: 1754221831
+  Status: failed
+  Ref: pr-1
+  Created At: 2025-04-06T03:37:42.333Z
+  Duration: N/A seconds
+  Configuration: N/A
+Pipeline ID: 1754220271
+  Status: failed
+  Ref: pr-1
+  Created At: 2025-04-06T03:33:38.606Z
+  Duration: N/A seconds
+  Configuration: N/A
+Pipeline ID: 1754214637
+  Status: failed
+  Ref: master
+  Created At: 2025-04-06T03:21:39.902Z
+  Duration: N/A seconds
+  Configuration: N/A
+#+end_src
+
 * =provisioning.py=
 
 \*This script requires an active Premium or Ultimate subscription.*\
