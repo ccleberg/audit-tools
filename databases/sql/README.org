@@ -4,7 +4,7 @@
 :r admins.sql
 #+end_src
 
-,#+begin_src text
+#+begin_src text
 | UserName    | UserType     | DatabaseUserName | Role            | PermissionType | PermissionState | ObjectType           | ObjectName         | ColumnName |
 |-------------+--------------+------------------+-----------------+----------------+-----------------+----------------------+--------------------+------------|
 | SCOTT       | SQL User     | SCOTT            | NULL            | SELECT         | GRANT           | USER_TABLE           | EMPLOYEES          | NULL       |
