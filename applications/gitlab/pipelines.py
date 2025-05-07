@@ -16,7 +16,12 @@ if __name__ == "__main__":
     per_page = 100
 
     while True:
-        response = requests.get(f"{BASE_URL}/projects/{PROJECT_ID}/pipelines", headers=HEADERS, params={"page": page, "per_page": per_page}, timeout=TIMEOUT)
+        response = requests.get(
+            f"{BASE_URL}/projects/{PROJECT_ID}/pipelines",
+            headers=HEADERS,
+            params={"page": page, "per_page": per_page},
+            timeout=TIMEOUT,
+        )
         if response.status_code == 200:
             pipelines = response.json()
             if not pipelines:
@@ -35,12 +40,18 @@ if __name__ == "__main__":
                 print(f"  Created At: {created_at}")
                 print(f"  Duration: {duration} seconds")
 
-                detail_response = requests.get(f"{BASE_URL}/projects/{PROJECT_ID}/pipelines/{pipeline_id}", headers=HEADERS, timeout=TIMEOUT)
+                detail_response = requests.get(
+                    f"{BASE_URL}/projects/{PROJECT_ID}/pipelines/{pipeline_id}",
+                    headers=HEADERS,
+                    timeout=TIMEOUT,
+                )
                 if detail_response.status_code == 200:
                     pipeline_details = detail_response.json()
                     print(f"  Configuration: {pipeline_details.get('config', 'N/A')}")
                 else:
-                    print(f"  Failed to fetch pipeline details: {detail_response.status_code}, {detail_response.text}")
+                    print(
+                        f"  Failed to fetch pipeline details: {detail_response.status_code}, {detail_response.text}"
+                    )
 
             page += 1
         else:
