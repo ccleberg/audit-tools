@@ -72,6 +72,11 @@ def main():
     report = apply_rules_and_report(df_input)
     report_df = pd.DataFrame(report)
 
+    # Do not truncate output
+    pd.set_option("display.expand_frame_repr", True)
+    pd.set_option("display.width", 1000)
+    pd.set_option("display.max_colwidth", 1000)
+
     # Print the report
     print(report_df)
 
