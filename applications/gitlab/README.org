@@ -59,7 +59,7 @@ python ./branch_protections.py
 
 * =passwords.py=
 
-\*This script does not apply to GitLab.com. This is for self-hosted instances only.*\
+*This script does not apply to GitLab.com. This is for self-hosted instances only.*
 
 #+begin_src sh
 python ./passwords.py
@@ -80,6 +80,24 @@ python ./provisioning.py
 #+begin_src text
 Group: 105300140
     2025-04-08T03:33:17.055Z : Action: member_created, Member: 128029250, Author: 24608590
+#+end_src
+
+* =repositories.py=
+
+#+begin_src shell
+python ./repositories.py
+#+end_src
+
+#+begin_src text
+# User ID Example
+Projects under ID: ccleberg:
+- audit-tools (ID: 68757698)
+- cleberg.net (ID: 68701468)
+
+# Group ID Example
+Projects under ID: phryq:
+- Yoshi Cli (ID: 68757750)
+- pages-demo (ID: 68757186)
 #+end_src
 
 * =users.py=
