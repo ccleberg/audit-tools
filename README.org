@@ -1,104 +1,102 @@
-* Background
+#+TITLE: Audit Tools by Christian Cleberg
+#+AUTHOR: Christian Cleberg
+#+OPTIONS: toc:nil
 
-I have been an auditor for years, starting with operational/financial
-audits and quickly transitioning to technology audits early in my
-career.
+* 📊 Audit Tools by Christian Cleberg
 
-While performing technology audits, attestations, etc., you will find
-that it requires a lot of manual effort if you don't use the right tools
-to automate as much as possible.
+Welcome to *Audit Tools* — a collection of open-source Python scripts and
+resources designed to help auditors, risk professionals, and data analysts
+automate common audit tasks and analytics.
 
-This repository serves as my personal collection of audit tools that I
-want to save and re-use later.
+Whether you're new to audit automation or an experienced tech-enabled auditor,
+this toolkit offers practical, real-world examples you can use, customize, and
+build upon.
 
-** Scope
+* 📦 What's Inside
 
-While I created the scripts and tools within this repository
-specifically for the applications I use, I am working to include
-edge-cases and niche tools as I can.
+This repository contains Python scripts and templates for common audit
+procedures and control testing activities, including:
 
-For now, refer to the tree below for application coverage.
+- ✅ *Pseudo-Random Sampling*
+- ✅ *GITC Extractions and Analysis*
+- ✅ *Project Management Tracking & Visualizations*
+- ✅ *Cloud Platform Analysis (planned)*
+- ✅ *Audit AI Prompts & Guides (planned)*
 
-#+begin_src shell
-tree -I ".git*|venv"
+The goal is to provide practical, easy-to-understand tools that auditors and
+analysts can quickly deploy in their environments.
+
+* 🚀 Getting Started
+
+**Clone the Repository**
+
+#+begin_src bash
+git clone https://github.com/ccleberg/audit-tools.git
+cd audit-tools
 #+end_src
 
-#+begin_src text
-.
-├── applications
-│   ├── github
-│   │   ├── github_admins.py
-│   │   ├── github_audit_log.py
-│   │   ├── github_branch_protections.py
-│   │   ├── github_commits.py
-│   │   └── README.org
-│   └── gitlab
-│       ├── approvals.py
-│       ├── branch_protections.py
-│       ├── passwords.py
-│       ├── pipelines.py
-│       ├── provisioning.py
-│       ├── README.org
-│       ├── repositories.py
-│       └── users.py
-├── CODEOWNERS
-├── databases
-│   ├── mongo
-│   │   ├── admins.py
-│   │   └── README.org
-│   ├── mysql
-│   │   ├── mysql_admins_alt.sql
-│   │   ├── mysql_admins.sql
-│   │   ├── passwords.sql
-│   │   └── README.org
-│   ├── oracle
-│   │   ├── oracle_admins_alt.sql
-│   │   ├── oracle_admins.sql
-│   │   └── README.org
-│   ├── postgres
-│   │   ├── admins.sql
-│   │   ├── passwords.sql
-│   │   └── README.org
-│   └── sql
-│       ├── admins.sql
-│       ├── passwords
-│       │   ├── example_data.csv
-│       │   ├── passwords.py
-│       │   └── query.sql
-│       └── README.org
-├── LICENSE
-├── os
-│   └── linux
-│       ├── passwords.sh
-│       ├── README.org
-│       └── ssh_root_login.sh
-├── project_management
-│   ├── alteryx
-│   │   └── project_email_reminders.yxmd
-│   ├── dash
-│   │   └── app.py
-│   └── powerbi
-│       └── project_dashboard
-│           ├── project_dashboard.pbix
-│           └── project_data.xlsx
-├── README.org
-├── requirements.txt
-└── sampling
-    ├── README.org
-    ├── sample.html
-    ├── sample-html.png
-    └── sample.py
+**Install Dependencies**
+
+/Required for Python scripts/
+
+#+begin_src bash
+pip install -r requirements.txt
 #+end_src
 
-* Development
-** Python
+**Run a Sample Script**
 
-For the Python scripts, use the following to activate a virtual
-environment for consistent packing:
+Example: Run the *Linux OS Report* tool.
 
-#+begin_src shell
-python3 -m venv venv
-source ./venv/bin/activate
-pip install PACKAGE_NAME
-python3 ./PYTHON_SCRIPT.py
+#+begin_src bash
+./os/linux/report/linux.sh
 #+end_src
+
+View the results in your terminal or within the file created by the script.
+
+* 📖 Learn More
+
+If you're new to audit analytics or Python scripting, start here:
+- [[https://realpython.com][Python for Auditors]]
+- [[https://audit-analytics.com][Audit Analytics 101]]
+- [[https://pandas.pydata.org/docs/getting_started/][Intro to Pandas Documentation]]
+
+Also, check out the =notebooks/= folder for interactive tutorials and use cases.
+
+* 🤝 How to Contribute
+
+Want to add your own audit scripts or improve existing ones? Contributions are
+welcome!
+
+**Ways to Help**
+- Submit new Python scripts for audit use cases.
+- Suggest enhancements or new features via [[https://github.com/ccleberg/audit-tools/issues][Issues]].
+- Improve documentation or write beginner-friendly tutorials.
+- Test existing tools on new datasets and report issues.
+
+**To Contribute**
+1. Fork this repo
+2. Create a new branch:
+   #+begin_src bash
+   git checkout -b my-feature
+   #+end_src
+3. Commit your changes:
+   #+begin_src bash
+   git commit -m 'Added new audit test'
+   #+end_src
+4. Push to the branch:
+   #+begin_src bash
+   git push origin my-feature
+   #+end_src
+5. Open a Pull Request
+
+* 👤 About the Creator
+
+Made with ❤️ by [[https://cleberg.net/][Christian Cleberg]].
+
+I'm a technology assurance leader passionate about audit innovation, AI in
+audit, and building practical tools for auditors and risk professionals.
+
+* 📜 License
+
+This project is licensed under the *GNU General Public License v3.0* — see the
+[[file:LICENSE][LICENSE]] file for details.
