@@ -1,0 +1,81 @@
+* =oracle_admins.sql=
+
+#+begin_src sql
+SELECT
+    grantee AS "User",
+    privilege AS "Privilege"
+FROM
+    dba_sys_privs
+WHERE
+    grantee IN (SELECT DISTINCT grantee FROM dba_sys_privs)
+UNION ALL
+SELECT
+    grantee AS "User",
+    privilege AS "Privilege"
+FROM
+    dba_tab_privs
+WHERE
+    grantee IN (SELECT DISTINCT grantee FROM dba_tab_privs);
+#+end_src
+
+#+begin_src text
+| User     | Privilege           |
+|----------+---------------------|
+| SCOTT    | CREATE SESSION      |
+| SCOTT    | CREATE TABLE        |
+| SCOTT    | SELECT              |
+| SCOTT    | INSERT              |
+| HR       | CREATE SESSION      |
+| HR       | SELECT              |
+| HR       | INSERT              |
+| HR       | UPDATE              |
+| SYS      | CREATE USER         |
+| SYS      | GRANT ANY PRIVILEGE |
+| SYS      | DROP USER           |
+| SYSTEM   | CREATE TABLESPACE   |
+| SYSTEM   | CREATE USER         |
+| SYSTEM   | ALTER USER          |
+| SYSTEM   | DROP USER           |
+| APP_USER | SELECT ON EMPLOYEES |
+| APP_USER | INSERT ON EMPLOYEES |
+| APP_USER | UPDATE ON EMPLOYEES |
+#+end_src
+
+* =oracle_admins_alt.sql=
+
+#+begin_src sql
+SELECT ** FROM sys.dba_role_privs;
+SELECT ** FROM sys.dba_sys_privs;
+SELECT ** FROM sys.dba_tab_privs;
+SELECT ** FROM sys.dba_users;
+#+end_src
+
+#+begin_src text
+| Grantee  | Granted_Role | Admin_Option |
+|----------+--------------+--------------|
+| SCOTT    | DBA          | NO           |
+| HR       | RESOURCE     | YES          |
+| APP_USER | DATA_ANALYST | NO           |
+
+| Grantee | Privilege           |
+|---------+---------------------|
+| SCOTT   | CREATE SESSION      |
+| HR      | CREATE TABLE        |
+| SYS     | GRANT ANY PRIVILEGE |
+| SYSTEM  | CREATE USER         |
+
+| Grantee  | Table_Name  | Privilege |
+|----------+-------------+-----------|
+| SCOTT    | EMPLOYEES   | SELECT    |
+| SCOTT    | EMPLOYEES   | INSERT    |
+| HR       | DEPARTMENTS | SELECT    |
+| APP_USER | EMPLOYEES   | UPDATE    |
+
+| Username | Account_Status | Default_Tablespace | Temporary_Tablespace |
+|----------+----------------+--------------------+----------------------|
+| SCOTT    | OPEN           | USERS              | TEMP                 |
+| HR       | OPEN           | USERS              | TEMP                 |
+| SYS      | OPEN           | SYSTEM             | TEMP                 |
+| SYSTEM   | OPEN           | SYSTEM             | TEMP                 |
+| APP_USER | OPEN           | USERS              | TEMP                 |
+#+end_src
