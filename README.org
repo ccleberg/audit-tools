@@ -31,7 +31,7 @@ analysts can quickly deploy in their environments.
 **Clone the Repository**
 
 #+begin_src bash
-git clone https://github.com/ccleberg/audit-tools.git
+git clone https://git.sr.ht/~cxc/audit-tools
 cd audit-tools
 #+end_src
 
@@ -69,7 +69,7 @@ welcome!
 
 **Ways to Help**
 - Submit new Python scripts for audit use cases.
-- Suggest enhancements or new features via [[https://github.com/ccleberg/audit-tools/issues][Issues]].
+- Suggest enhancements or new features.
 - Improve documentation or write beginner-friendly tutorials.
 - Test existing tools on new datasets and report issues.
 
