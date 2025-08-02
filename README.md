@@ -1,112 +1,94 @@
-# 📊 Audit Tools by Christian Cleberg
+# Audit Tools by Christian Cleberg
 
-Welcome to **Audit Tools** — a collection of open-source Python scripts
-and resources designed to help auditors, risk professionals, and data
-analysts automate common audit tasks and analytics.
+**Audit Tools** is a collection of open-source Python scripts and related resources intended to support auditors, risk professionals, and data analysts in automating common audit procedures and analyses.
 
-Whether you're new to audit automation or an experienced tech-enabled
-auditor, this toolkit offers practical, real-world examples you can use,
-customize, and build upon.
+This repository includes practical examples that can be used as-is or adapted to specific audit environments.
 
-# 📦 What's Inside
+## Contents
 
-This repository contains Python scripts and templates for common audit
-procedures and control testing activities, including:
+The repository includes scripts and templates related to:
 
-- ✅ **Pseudo-Random Sampling**
-- ✅ **GITC Extractions and Analysis**
-- ✅ **Project Management Tracking & Visualizations**
-- ✅ **Cloud Platform Analysis (planned)**
-- ✅ **Audit AI Prompts & Guides (planned)**
+- Pseudo-random sampling
+- General IT controls (GITC) extraction and analysis
+- Project management tracking and visualization
+- Cloud platform analysis (planned)
+- Prompt engineering and AI audit guidance (planned)
 
-The goal is to provide practical, easy-to-understand tools that auditors
-and analysts can quickly deploy in their environments.
+These tools are intended to be straightforward and applicable across a range of audit contexts.
 
-# 🚀 Getting Started
+## Getting Started
 
-****Clone the Repository****
+**Clone the Repository**
 
-``` bash
+```bash
 git clone https://git.sr.ht/~cxc/audit-tools
 cd audit-tools
 ```
 
-****Install Dependencies****
+**Install Dependencies**
 
-*Required for Python scripts*
+Required for running the Python scripts:
 
-``` bash
+```bash
 pip install -r requirements.txt
 ```
 
-****Run a Sample Script****
+**Run a Sample Script**
 
-Example: Run the **Linux OS Report** tool.
+For example, to run the Linux OS report tool:
 
-``` bash
+```bash
 ./os/linux/report/linux.sh
 ```
 
-View the results in your terminal or within the file created by the
-script.
+Output will be shown in the terminal or saved to a file, depending on the script.
 
-# 📖 Learn More
+## Resources
 
-If you're new to audit analytics or Python scripting, start here:
+If you're new to scripting or audit analytics, you may find the following helpful:
 
 - [Python for Auditors](https://realpython.com)
 - [Audit Analytics 101](https://audit-analytics.com)
-- [Intro to Pandas
-  Documentation](https://pandas.pydata.org/docs/getting_started/)
+- [Getting Started with Pandas](https://pandas.pydata.org/docs/getting_started/)
 
-Also, check out the `notebooks/` folder for interactive tutorials and
-use cases.
+See the `notebooks/` directory for additional walkthroughs and examples.
 
-# 🤝 How to Contribute
+## Contributing
 
-Want to add your own audit scripts or improve existing ones?
-Contributions are welcome!
+Contributions are welcome. You can contribute by:
 
-****Ways to Help****
+- Adding new audit-related scripts
+- Suggesting improvements or feature ideas
+- Enhancing documentation or tutorials
+- Testing the tools on additional datasets and reporting any issues
 
-- Submit new Python scripts for audit use cases.
-- Suggest enhancements or new features.
-- Improve documentation or write beginner-friendly tutorials.
-- Test existing tools on new datasets and report issues.
+To contribute:
 
-****To Contribute****
+1. Fork the repository
+2. Create a new branch:
 
-1.  Fork this repo
+   ```bash
+   git checkout -b my-feature
+   ```
 
-2.  Create a new branch:
+3. Commit your changes:
 
-    ``` bash
-    git checkout -b my-feature
-    ```
+   ```bash
+   git commit -m 'Added new audit test'
+   ```
 
-3.  Commit your changes:
+4. Push your branch:
 
-    ``` bash
-    git commit -m 'Added new audit test'
-    ```
+   ```bash
+   git push origin my-feature
+   ```
 
-4.  Push to the branch:
+5. Open a pull request
 
-    ``` bash
-    git push origin my-feature
-    ```
+## About
 
-5.  Open a Pull Request
+Created by [Christian Cleberg](https://cleberg.net/), with an interest in practical audit tooling, automation, and applied data analysis in risk and assurance.
 
-# 👤 About the Creator
+## License
 
-Made with ❤️ by [Christian Cleberg](https://cleberg.net/).
-
-I'm a technology assurance leader passionate about audit innovation, AI
-in audit, and building practical tools for auditors and risk
-professionals.
-
-# 📜 License
-
-This project is licensed under the **GNU General Public License v3.0** —
-see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
