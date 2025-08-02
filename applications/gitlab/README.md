@@ -1,14 +1,12 @@
-#+title: GitLab Scripts
+# `approvals.py`
 
-* =approvals.py=
+\\This script requires an active Premium or Ultimate subscription.\*\\
 
-\*This script requires an active Premium or Ultimate subscription.*\
-
-#+begin_src sh
+``` bash
 python ./approvals.py
-#+end_src
+```
 
-#+begin_src text
+``` text
 Rule: All Members
   Approvals Required: 1
   Rule type: any_approver
@@ -17,15 +15,15 @@ Rule: Default
   Rule type: regular
   Protected Branch: master
   Eligible Approver: Christian Cleberg
-#+end_src
+```
 
-* =branch_protections.py=
+# `branch_protections.py`
 
-#+begin_src sh
+``` bash
 python ./branch_protections.py
-#+end_src
+```
 
-#+begin_src json
+``` json
 [
     {
         "id": 148448212,
@@ -55,27 +53,28 @@ python ./branch_protections.py
         "inherited": false
     }
 ]
-#+end_src
+```
 
-* =passwords.py=
+# `passwords.py`
 
-*This script does not apply to GitLab.com. This is for self-hosted instances only.*
+**This script does not apply to GitLab.com. This is for self-hosted
+instances only.**
 
-#+begin_src sh
+``` bash
 python ./passwords.py
-#+end_src
+```
 
-#+begin_src text
+``` text
 # TODO: Need access to a self-hosted version of GitLab to test this out.
-#+end_src
+```
 
-* =pipelines.py=
+# `pipelines.py`
 
-#+begin_src sh
+``` bash
 python ./pipelines.py
-#+end_src
+```
 
-#+begin_src text
+``` text
 Pipeline ID: 1754222228
   Status: failed
   Ref: master
@@ -100,28 +99,28 @@ Pipeline ID: 1754214637
   Created At: 2025-04-06T03:21:39.902Z
   Duration: N/A seconds
   Configuration: N/A
-#+end_src
+```
 
-* =provisioning.py=
+# `provisioning.py`
 
-\*This script requires an active Premium or Ultimate subscription.*\
+\\This script requires an active Premium or Ultimate subscription.\*\\
 
-#+begin_src sh
+``` bash
 python ./provisioning.py
-#+end_src
+```
 
-#+begin_src text
+``` text
 Group: 105300140
     2025-04-08T03:33:17.055Z : Action: member_created, Member: 128029250, Author: 24608590
-#+end_src
+```
 
-* =repositories.py=
+# `repositories.py`
 
-#+begin_src shell
+``` shell
 python ./repositories.py
-#+end_src
+```
 
-#+begin_src text
+``` text
 # User ID Example
 Projects under ID: ccleberg:
 - audit-tools (ID: 68757698)
@@ -131,15 +130,15 @@ Projects under ID: ccleberg:
 Projects under ID: phryq:
 - Yoshi Cli (ID: 68757750)
 - pages-demo (ID: 68757186)
-#+end_src
+```
 
-* =users.py=
+# `users.py`
 
-#+begin_src sh
+``` bash
 python ./users.py
-#+end_src
+```
 
-#+begin_src text
+``` text
 Access Level Roles:
     0  : No access
     5  : Minimal access
@@ -158,4 +157,4 @@ Username: ccleberg, Access Level: 50
 Project 68701468 Members:
 Username: ccleberg, Access Level: 50
 Username: project_68701468_bot_2c7ee010a479c0e48cdb4c7c5cfae886, Access Level: 40
-#+end_src
+```

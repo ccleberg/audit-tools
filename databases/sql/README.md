@@ -1,10 +1,10 @@
-* =admins.sql=
+# `admins.sql`
 
-#+begin_src sql
+``` sql
 :r admins.sql
-#+end_src
+```
 
-#+begin_src text
+``` text
 | UserName    | UserType     | DatabaseUserName | Role            | PermissionType | PermissionState | ObjectType           | ObjectName         | ColumnName |
 |-------------+--------------+------------------+-----------------+----------------+-----------------+----------------------+--------------------+------------|
 | SCOTT       | SQL User     | SCOTT            | NULL            | SELECT         | GRANT           | USER_TABLE           | EMPLOYEES          | NULL       |
@@ -14,15 +14,15 @@
 | APP_USER    | Windows User | APP_USER         | ApplicationRole | INSERT         | GRANT           | USER_TABLE           | EMPLOYEES          | NULL       |
 | {All Users} | {All Users}  | {All Users}      | public          | SELECT         | GRANT           | USER_TABLE           | EMPLOYEES          | NULL       |
 | {All Users} | {All Users}  | {All Users}      | public          | EXECUTE        | GRANT           | SQL_STORED_PROCEDURE | SP_GET_EMPLOYEE    | NULL       |
-#+end_src
+```
 
-* =passwords.py=
+# `passwords.py`
 
-#+begin_src shell
+``` shell
 python passwords.py
-#+end_src
+```
 
-#+begin_src text
+``` text
 | Name  | Type      | Check Policy | Check Expiration | Reason                                                                                                                                        |
 |-------+-----------+--------------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------|
 | user1 | SQL_LOGIN | PASS         | FAIL             | Password policy is enforced. Reviewer to check the assigned policy. Password expiration is not enforced.                                      |
@@ -33,4 +33,4 @@ python passwords.py
 | user6 | SQL_LOGIN | PASS         | PASS             | Password policy is enforced. Reviewer to check the assigned policy. Password expiration is enforced. Reviewer to check the expiration policy. |
 | user7 | SQL_LOGIN | PASS         | PASS             | Password policy is enforced. Reviewer to check the assigned policy. Password expiration is enforced. Reviewer to check the expiration policy. |
 | user8 | SQL_LOGIN | PASS         | PASS             | Password policy is enforced. Reviewer to check the assigned policy. Password expiration is enforced. Reviewer to check the expiration policy. |
-#+end_src
+```

@@ -1,12 +1,10 @@
-#+title: Sampling Tools
+# `sample.py`
 
-* =sample.py=
-
-#+begin_src sh
+``` bash
 python ./sample.py
-#+end_src
+```
 
-#+begin_src text
+``` text
 Dataframe size (rows, columns):  (100, 9)
 Sample size:  5
 Sample:
@@ -18,15 +16,16 @@ Sample:
 70     71  32BB9Ff4d939788  ...                                       Wireless                6146
 
 [5 rows x 9 columns]
-#+end_src
+```
 
-* =sample.html=
+# `sample.html`
 
-This is an interactive web page that allows users to submit their population
-size, sample size(s), and generate a psuedo-random sample list of numbers to use
-when sampling against their population.
+This is an interactive web page that allows users to submit their
+population size, sample size(s), and generate a psuedo-random sample
+list of numbers to use when sampling against their population.
 
-Samples can be re-generated and validated using the seed numbers provided during 
-the original generation.
+Samples can be re-generated and validated using the seed numbers
+provided during the original generation.
 
-[[sample-html.png]]
+<span class="spurious-link"
+target="sample-html.png">*sample-html.png*</span>

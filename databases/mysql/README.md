@@ -1,0 +1,173 @@
+# `mysql_admins.sql`
+
+``` sql
+SELECT * FROM information_schema.user_privileges;
+```
+
+    MySQL [(none)]> SELECT * FROM information_schema.user_privileges;
+    +--------------------------------+---------------+---------------------------------+--------------+
+    | GRANTEE                        | TABLE_CATALOG | PRIVILEGE_TYPE                  | IS_GRANTABLE |
+    +--------------------------------+---------------+---------------------------------+--------------+
+    | 'mysql.infoschema'@'localhost' | def           | SELECT                          | NO           |
+    | 'mysql.infoschema'@'localhost' | def           | AUDIT_ABORT_EXEMPT              | NO           |
+    | 'mysql.infoschema'@'localhost' | def           | FIREWALL_EXEMPT                 | NO           |
+    | 'mysql.infoschema'@'localhost' | def           | SYSTEM_USER                     | NO           |
+    | 'mysql.session'@'localhost'    | def           | SHUTDOWN                        | NO           |
+    | 'mysql.session'@'localhost'    | def           | SUPER                           | NO           |
+    | 'mysql.session'@'localhost'    | def           | AUDIT_ABORT_EXEMPT              | NO           |
+    | 'mysql.session'@'localhost'    | def           | AUTHENTICATION_POLICY_ADMIN     | NO           |
+    | 'mysql.session'@'localhost'    | def           | BACKUP_ADMIN                    | NO           |
+    | 'mysql.session'@'localhost'    | def           | CLONE_ADMIN                     | NO           |
+    | 'mysql.session'@'localhost'    | def           | CONNECTION_ADMIN                | NO           |
+    | 'mysql.session'@'localhost'    | def           | FIREWALL_EXEMPT                 | NO           |
+    | 'mysql.session'@'localhost'    | def           | PERSIST_RO_VARIABLES_ADMIN      | NO           |
+    | 'mysql.session'@'localhost'    | def           | SESSION_VARIABLES_ADMIN         | NO           |
+    | 'mysql.session'@'localhost'    | def           | SYSTEM_USER                     | NO           |
+    | 'mysql.session'@'localhost'    | def           | SYSTEM_VARIABLES_ADMIN          | NO           |
+    | 'mysql.sys'@'localhost'        | def           | USAGE                           | NO           |
+    | 'mysql.sys'@'localhost'        | def           | AUDIT_ABORT_EXEMPT              | NO           |
+    | 'mysql.sys'@'localhost'        | def           | FIREWALL_EXEMPT                 | NO           |
+    | 'mysql.sys'@'localhost'        | def           | SYSTEM_USER                     | NO           |
+    | 'root'@'localhost'             | def           | SELECT                          | YES          |
+    | 'root'@'localhost'             | def           | INSERT                          | YES          |
+    | 'root'@'localhost'             | def           | UPDATE                          | YES          |
+    | 'root'@'localhost'             | def           | DELETE                          | YES          |
+    | 'root'@'localhost'             | def           | CREATE                          | YES          |
+    | 'root'@'localhost'             | def           | DROP                            | YES          |
+    | 'root'@'localhost'             | def           | RELOAD                          | YES          |
+    | 'root'@'localhost'             | def           | SHUTDOWN                        | YES          |
+    | 'root'@'localhost'             | def           | PROCESS                         | YES          |
+    | 'root'@'localhost'             | def           | FILE                            | YES          |
+    | 'root'@'localhost'             | def           | REFERENCES                      | YES          |
+    | 'root'@'localhost'             | def           | INDEX                           | YES          |
+    | 'root'@'localhost'             | def           | ALTER                           | YES          |
+    | 'root'@'localhost'             | def           | SHOW DATABASES                  | YES          |
+    | 'root'@'localhost'             | def           | SUPER                           | YES          |
+    | 'root'@'localhost'             | def           | CREATE TEMPORARY TABLES         | YES          |
+    | 'root'@'localhost'             | def           | LOCK TABLES                     | YES          |
+    | 'root'@'localhost'             | def           | EXECUTE                         | YES          |
+    | 'root'@'localhost'             | def           | REPLICATION SLAVE               | YES          |
+    | 'root'@'localhost'             | def           | REPLICATION CLIENT              | YES          |
+    | 'root'@'localhost'             | def           | CREATE VIEW                     | YES          |
+    | 'root'@'localhost'             | def           | SHOW VIEW                       | YES          |
+    | 'root'@'localhost'             | def           | CREATE ROUTINE                  | YES          |
+    | 'root'@'localhost'             | def           | ALTER ROUTINE                   | YES          |
+    | 'root'@'localhost'             | def           | CREATE USER                     | YES          |
+    | 'root'@'localhost'             | def           | EVENT                           | YES          |
+    | 'root'@'localhost'             | def           | TRIGGER                         | YES          |
+    | 'root'@'localhost'             | def           | CREATE TABLESPACE               | YES          |
+    | 'root'@'localhost'             | def           | CREATE ROLE                     | YES          |
+    | 'root'@'localhost'             | def           | DROP ROLE                       | YES          |
+    | 'root'@'localhost'             | def           | ALLOW_NONEXISTENT_DEFINER       | YES          |
+    | 'root'@'localhost'             | def           | APPLICATION_PASSWORD_ADMIN      | YES          |
+    | 'root'@'localhost'             | def           | AUDIT_ABORT_EXEMPT              | YES          |
+    | 'root'@'localhost'             | def           | AUDIT_ADMIN                     | YES          |
+    | 'root'@'localhost'             | def           | AUTHENTICATION_POLICY_ADMIN     | YES          |
+    | 'root'@'localhost'             | def           | BACKUP_ADMIN                    | YES          |
+    | 'root'@'localhost'             | def           | BINLOG_ADMIN                    | YES          |
+    | 'root'@'localhost'             | def           | BINLOG_ENCRYPTION_ADMIN         | YES          |
+    | 'root'@'localhost'             | def           | CLONE_ADMIN                     | YES          |
+    | 'root'@'localhost'             | def           | CONNECTION_ADMIN                | YES          |
+    | 'root'@'localhost'             | def           | CREATE_SPATIAL_REFERENCE_SYSTEM | YES          |
+    | 'root'@'localhost'             | def           | ENCRYPTION_KEY_ADMIN            | YES          |
+    | 'root'@'localhost'             | def           | FIREWALL_EXEMPT                 | YES          |
+    | 'root'@'localhost'             | def           | FLUSH_OPTIMIZER_COSTS           | YES          |
+    | 'root'@'localhost'             | def           | FLUSH_PRIVILEGES                | YES          |
+    | 'root'@'localhost'             | def           | FLUSH_STATUS                    | YES          |
+    | 'root'@'localhost'             | def           | FLUSH_TABLES                    | YES          |
+    | 'root'@'localhost'             | def           | FLUSH_USER_RESOURCES            | YES          |
+    | 'root'@'localhost'             | def           | GROUP_REPLICATION_ADMIN         | YES          |
+    | 'root'@'localhost'             | def           | GROUP_REPLICATION_STREAM        | YES          |
+    | 'root'@'localhost'             | def           | INNODB_REDO_LOG_ARCHIVE         | YES          |
+    | 'root'@'localhost'             | def           | INNODB_REDO_LOG_ENABLE          | YES          |
+    | 'root'@'localhost'             | def           | OPTIMIZE_LOCAL_TABLE            | YES          |
+    | 'root'@'localhost'             | def           | PASSWORDLESS_USER_ADMIN         | YES          |
+    | 'root'@'localhost'             | def           | PERSIST_RO_VARIABLES_ADMIN      | YES          |
+    | 'root'@'localhost'             | def           | REPLICATION_APPLIER             | YES          |
+    | 'root'@'localhost'             | def           | REPLICATION_SLAVE_ADMIN         | YES          |
+    | 'root'@'localhost'             | def           | RESOURCE_GROUP_ADMIN            | YES          |
+    | 'root'@'localhost'             | def           | RESOURCE_GROUP_USER             | YES          |
+    | 'root'@'localhost'             | def           | ROLE_ADMIN                      | YES          |
+    | 'root'@'localhost'             | def           | SENSITIVE_VARIABLES_OBSERVER    | YES          |
+    | 'root'@'localhost'             | def           | SERVICE_CONNECTION_ADMIN        | YES          |
+    | 'root'@'localhost'             | def           | SESSION_VARIABLES_ADMIN         | YES          |
+    | 'root'@'localhost'             | def           | SET_ANY_DEFINER                 | YES          |
+    | 'root'@'localhost'             | def           | SHOW_ROUTINE                    | YES          |
+    | 'root'@'localhost'             | def           | SYSTEM_USER                     | YES          |
+    | 'root'@'localhost'             | def           | SYSTEM_VARIABLES_ADMIN          | YES          |
+    | 'root'@'localhost'             | def           | TABLE_ENCRYPTION_ADMIN          | YES          |
+    | 'root'@'localhost'             | def           | TELEMETRY_LOG_ADMIN             | YES          |
+    | 'root'@'localhost'             | def           | TRANSACTION_GTID_TAG            | YES          |
+    | 'root'@'localhost'             | def           | XA_RECOVER_ADMIN                | YES          |
+    | 'cmc'@'%'                      | def           | USAGE                           | NO           |
+    +--------------------------------+---------------+---------------------------------+--------------+
+    92 rows in set (0.001 sec)
+
+# `passwords.sql`
+
+``` sql
+SELECT user, host, plugin FROM mysql.user;
+```
+
+    mysql> SELECT user, host, plugin FROM mysql.user;
+    +------------------+-----------+-----------------------+
+    | user             | host      | plugin                |
+    +------------------+-----------+-----------------------+
+    | cmc              | %         | caching_sha2_password |
+    | mysql.infoschema | localhost | caching_sha2_password |
+    | mysql.session    | localhost | caching_sha2_password |
+    | mysql.sys        | localhost | caching_sha2_password |
+    | root             | localhost | caching_sha2_password |
+    +------------------+-----------+-----------------------+
+    5 rows in set (0.001 sec)
+
+``` sql
+SHOW GLOBAL VARIABLES LIKE 'validate_password%';
+SHOW VARIABLES LIKE 'validate_password%';
+```
+
+    mysql> SHOW GLOBAL VARIABLES LIKE 'validate_password%';
+    +-------------------------------------------------+--------+
+    | Variable_name                                   | Value  |
+    +-------------------------------------------------+--------+
+    | validate_password.changed_characters_percentage | 0      |
+    | validate_password.check_user_name               | ON     |
+    | validate_password.dictionary_file               |        |
+    | validate_password.length                        | 8      |
+    | validate_password.mixed_case_count              | 1      |
+    | validate_password.number_count                  | 1      |
+    | validate_password.policy                        | MEDIUM |
+    | validate_password.special_char_count            | 1      |
+    +-------------------------------------------------+--------+
+    8 rows in set (0.004 sec)
+
+    mysql> SHOW VARIABLES LIKE 'validate_password%';
+    +-------------------------------------------------+--------+
+    | Variable_name                                   | Value  |
+    +-------------------------------------------------+--------+
+    | validate_password.changed_characters_percentage | 0      |
+    | validate_password.check_user_name               | ON     |
+    | validate_password.dictionary_file               |        |
+    | validate_password.length                        | 8      |
+    | validate_password.mixed_case_count              | 1      |
+    | validate_password.number_count                  | 1      |
+    | validate_password.policy                        | MEDIUM |
+    | validate_password.special_char_count            | 1      |
+    +-------------------------------------------------+--------+
+    8 rows in set (0.004 sec)
+
+``` sql
+SELECT * FROM mysql.user
+```
+
+    MySQL [(none)]> SELECT * FROM mysql.user;
+    +-----------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+------------------------+----------+------------+-------------+--------------+---------------+-------------+-----------------+----------------------+-----------------------+------------------------------------------------------------------------+------------------+-----------------------+-------------------+----------------+------------------+----------------+------------------------+---------------------+--------------------------+-----------------+
+    | Host      | User             | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | Reload_priv | Shutdown_priv | Process_priv | File_priv | Grant_priv | References_priv | Index_priv | Alter_priv | Show_db_priv | Super_priv | Create_tmp_table_priv | Lock_tables_priv | Execute_priv | Repl_slave_priv | Repl_client_priv | Create_view_priv | Show_view_priv | Create_routine_priv | Alter_routine_priv | Create_user_priv | Event_priv | Trigger_priv | Create_tablespace_priv | ssl_type | ssl_cipher | x509_issuer | x509_subject | max_questions | max_updates | max_connections | max_user_connections | plugin                | authentication_string                                                  | password_expired | password_last_changed | password_lifetime | account_locked | Create_role_priv | Drop_role_priv | Password_reuse_history | Password_reuse_time | Password_require_current | User_attributes |
+    +-----------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+------------------------+----------+------------+-------------+--------------+---------------+-------------+-----------------+----------------------+-----------------------+------------------------------------------------------------------------+------------------+-----------------------+-------------------+----------------+------------------+----------------+------------------------+---------------------+--------------------------+-----------------+
+    | %         | cmc              | N           | N           | N           | N           | N           | N         | N           | N             | N            | N         | N          | N               | N          | N          | N            | N          | N                     | N                | N            | N               | N                | N                | N              | N                   | N                  | N                | N          | N            | N                      |          |            |             |              |             0 |           0 |               0 |                    0 | caching_sha2_password |                                                                        | N                | 2025-04-25 16:28:52   |              NULL | N              | N                | N              |                   NULL |                NULL | NULL                     | NULL            |
+    | localhost | mysql.infoschema | Y           | N           | N           | N           | N           | N         | N           | N             | N            | N         | N          | N               | N          | N          | N            | N          | N                     | N                | N            | N               | N                | N                | N              | N                   | N                  | N                | N          | N            | N                      |          |            |             |              |             0 |           0 |               0 |                    0 | caching_sha2_password | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | N                | 2025-04-25 15:51:53   |              NULL | Y              | N                | N              |                   NULL |                NULL | NULL                     | NULL            |
+    | localhost | mysql.session    | N           | N           | N           | N           | N           | N         | N           | Y             | N            | N         | N          | N               | N          | N          | N            | Y          | N                     | N                | N            | N               | N                | N                | N              | N                   | N                  | N                | N          | N            | N                      |          |            |             |              |             0 |           0 |               0 |                    0 | caching_sha2_password | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | N                | 2025-04-25 15:51:53   |              NULL | Y              | N                | N              |                   NULL |                NULL | NULL                     | NULL            |
+    | localhost | mysql.sys        | N           | N           | N           | N           | N           | N         | N           | N             | N            | N         | N          | N               | N          | N          | N            | N          | N                     | N                | N            | N               | N                | N                | N              | N                   | N                  | N                | N          | N            | N                      |          |            |             |              |             0 |           0 |               0 |                    0 | caching_sha2_password | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | N                | 2025-04-25 15:51:53   |              NULL | Y              | N                | N              |                   NULL |                NULL | NULL                     | NULL            |
+    | localhost | root             | Y           | Y           | Y           | Y           | Y           | Y         | Y           | Y             | Y            | Y         | Y          | Y               | Y          | Y          | Y            | Y          | Y                     | Y                | Y            | Y               | Y                | Y                | Y              | Y                   | Y                  | Y                | Y          | Y            | Y                      |          |            |             |              |             0 |           0 |               0 |                    0 | caching_sha2_password |                                                                        | N                | 2025-04-25 15:51:53   |              NULL | N              | Y                | Y              |                   NULL |                NULL | NULL                     | NULL            |
+    +-----------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+------------------------+----------+------------+-------------+--------------+---------------+-------------+-----------------+----------------------+-----------------------+------------------------------------------------------------------------+------------------+-----------------------+-------------------+----------------+------------------+----------------+------------------------+---------------------+--------------------------+-----------------+
+    5 rows in set (0.005 sec)

@@ -1,6 +1,6 @@
-* =oracle_admins.sql=
+# `oracle_admins.sql`
 
-#+begin_src sql
+``` sql
 SELECT
     grantee AS "User",
     privilege AS "Privilege"
@@ -16,9 +16,9 @@ FROM
     dba_tab_privs
 WHERE
     grantee IN (SELECT DISTINCT grantee FROM dba_tab_privs);
-#+end_src
+```
 
-#+begin_src text
+``` text
 | User     | Privilege           |
 |----------+---------------------|
 | SCOTT    | CREATE SESSION      |
@@ -39,18 +39,18 @@ WHERE
 | APP_USER | SELECT ON EMPLOYEES |
 | APP_USER | INSERT ON EMPLOYEES |
 | APP_USER | UPDATE ON EMPLOYEES |
-#+end_src
+```
 
-* =oracle_admins_alt.sql=
+# `oracle_admins_alt.sql`
 
-#+begin_src sql
+``` sql
 SELECT ** FROM sys.dba_role_privs;
 SELECT ** FROM sys.dba_sys_privs;
 SELECT ** FROM sys.dba_tab_privs;
 SELECT ** FROM sys.dba_users;
-#+end_src
+```
 
-#+begin_src text
+``` text
 | Grantee  | Granted_Role | Admin_Option |
 |----------+--------------+--------------|
 | SCOTT    | DBA          | NO           |
@@ -78,4 +78,4 @@ SELECT ** FROM sys.dba_users;
 | SYS      | OPEN           | SYSTEM             | TEMP                 |
 | SYSTEM   | OPEN           | SYSTEM             | TEMP                 |
 | APP_USER | OPEN           | USERS              | TEMP                 |
-#+end_src
+```
