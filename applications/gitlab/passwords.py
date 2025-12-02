@@ -18,12 +18,19 @@ if __name__ == "__main__":
     response = requests.get(URL, headers=HEADERS, timeout=TIMEOUT)
     if response.status_code == 200:
         settings = response.json()
-        password_length = settings.get("password_length", "Not set")
-        password_complexity = settings.get("password_complexity", "Not set")
+        minimum_password_length = settings.get("minimum_password_length", "Not set")
+        password_number_required = settings.get("password_number_required", "Not set")
+        password_symbol_required = settings.get("password_symbol_required", "Not set")
+        password_uppercase_required = settings.get("password_uppercase_required", "Not set")
+        password_lowercase_required = settings.get("password_lowercase_required", "Not set")
 
-        print(f"Password Length: {password_length}")
-        print(f"Password Complexity: {password_complexity}")
+        print(f"Password Length: {minimum_password_length}")
+        print(f"Password Number Required: {password_number_required}")
+        print(f"Password Symbol Required: {password_symbol_required}")
+        print(f"Password Uppercase Required: {password_uppercase_required}")
+        print(f"Password Lowercase Required: {password_lowercase_required}")
     else:
         print(
             f"Failed to fetch application settings: {response.status_code}, {response.text}"
         )
+
