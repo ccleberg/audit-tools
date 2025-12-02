@@ -21,8 +21,12 @@ if __name__ == "__main__":
         minimum_password_length = settings.get("minimum_password_length", "Not set")
         password_number_required = settings.get("password_number_required", "Not set")
         password_symbol_required = settings.get("password_symbol_required", "Not set")
-        password_uppercase_required = settings.get("password_uppercase_required", "Not set")
-        password_lowercase_required = settings.get("password_lowercase_required", "Not set")
+        password_uppercase_required = settings.get(
+            "password_uppercase_required", "Not set"
+        )
+        password_lowercase_required = settings.get(
+            "password_lowercase_required", "Not set"
+        )
 
         print(f"Password Length: {minimum_password_length}")
         print(f"Password Number Required: {password_number_required}")
@@ -33,4 +37,3 @@ if __name__ == "__main__":
         print(
             f"Failed to fetch application settings: {response.status_code}, {response.text}"
         )
-
