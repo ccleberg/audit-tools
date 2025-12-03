@@ -21,7 +21,7 @@ These tools are intended to be straightforward and applicable across a range of 
 **Clone the Repository**
 
 ```bash
-git clone https://git.sr.ht/~cxc/audit-tools
+git clone https://github.com/ccleberg/audit-tools
 cd audit-tools
 ```
 
@@ -84,11 +84,4 @@ To contribute:
    ```
 
 5. Open a pull request
-
-## About
-
-Created by [Christian Cleberg](https://cleberg.net/), with an interest in practical audit tooling, automation, and applied data analysis in risk and assurance.
-
-## License
-
-This project is licensed under the [GNU General Public License v3.0](LICENSE).
+e [GNU General Public License v3.0](LICENSE).
