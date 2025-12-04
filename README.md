@@ -1,4 +1,4 @@
-# Audit Tools by Christian Cleberg
+# IT Audit Automation
 
 **Audit Tools** is a collection of open-source Python scripts and related resources intended to support auditors, risk professionals, and data analysts in automating common audit procedures and analyses.
 
