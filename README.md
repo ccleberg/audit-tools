@@ -31,6 +31,9 @@ Required for running the Python scripts:
 
 ```bash
 pip install -r requirements.txt
+
+# or, if you prefer `uv`:
+uv run file.py
 ```
 
 **Run a Sample Script**
@@ -84,4 +87,3 @@ To contribute:
    ```
 
 5. Open a pull request
-e [GNU General Public License v3.0](LICENSE).
