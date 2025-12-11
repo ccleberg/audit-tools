@@ -1,9 +1,9 @@
-# `get_account_users.sh`
+# `aws_iam_users.sh`
 
 *Note*: This example uses an account titled `cmc`, which has access provisioned to it through IAM.
 
 ``` bash
-./get_account_users.sh
+./aws_iam_users.sh
 ```
 
 ``` text
