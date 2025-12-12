@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if the script is being run as root
+if [ "$EUID" -ne 0 ]; then
+  echo "Error: This script must be run as root or with sudo."
+  exit 1
+fi
+
 # Check if the sshd_config file exists
 if [ ! -f /etc/ssh/sshd_config ]; then
     echo "Error: /etc/ssh/sshd_config not found."
@@ -10,7 +16,14 @@ echo "--- SSH Root Login Audit ---"
 
 # Find the PermitRootLogin setting, ignoring commented-out lines
 permit_root_login=$(grep -E "^[[:space:]]*PermitRootLogin" /etc/ssh/sshd_config)
-echo "Found setting: $permit_root_login"
+
+if [ -z "$permit_root_login" ]; then
+    echo "PermitRootLogin is not explicitly set. Relying on sshd defaults (usually 'prohibit-password')."
+    # In this case, we can assume it's not a simple 'yes', so we can stop.
+    exit 0
+else
+    echo "Found setting: $permit_root_login"
+fi
 
 
 # Check if PermitRootLogin is set to something other than 'no'
