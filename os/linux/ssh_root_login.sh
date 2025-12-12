@@ -10,14 +10,7 @@ echo "--- SSH Root Login Audit ---"
 
 # Find the PermitRootLogin setting, ignoring commented-out lines
 permit_root_login=$(grep -E "^[[:space:]]*PermitRootLogin" /etc/ssh/sshd_config)
-
-if [ -z "$permit_root_login" ]; then
-    echo "PermitRootLogin is not explicitly set. Relying on sshd defaults (usually 'prohibit-password')."
-    # In this case, we can assume it's not a simple 'yes', so we can stop.
-    exit 0
-else
-    echo "Found setting: $permit_root_login"
-fi
+echo "Found setting: $permit_root_login"
 
 
 # Check if PermitRootLogin is set to something other than 'no'
