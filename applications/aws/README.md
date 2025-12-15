@@ -205,3 +205,40 @@ Rule#,Policy‑Item,Expected,Actual,Result
 9,Prevent password reuse (last N),4,4,PASS
 10,Hard expiry (no grace period),false,false,PASS
 ```
+
+# `aws_s3_buckets.sh`
+
+This script requires one non-interactive step. Simply run the script:
+
+``` bash
+chmod +x aws_s3_buckets.sh
+./aws_s3_buckets.sh
+```
+
+The shell will show you each bucket discovered during the scanning process, as well as the final result. This final result is a combination of the bucket's Public Access Block (PAB), Policy Status (IsPublic), and ACLs (AllUsers Group).
+
+``` text
+Starting FULL S3 Public Access Audit for the CURRENT account...
+---
+1. Retrieving all bucket names...
+Processing bucket: 13bf5920-a09f-47bc-a75a-394a09f18d6a
+  Region determined: eu-west-1
+  Final Status: FALSE
+Processing bucket: c67fa6bd-2fd5-4bc5-825d-587fb535bf2e
+  Region determined: eu-west-1
+  Final Status: FALSE
+---
+✅ Audit Complete.
+Final report saved to **s3_full_public_access_audit.csv**
+BucketName,Region,PAB_FullyRestricted,Policy_IsPublic,ACL_AllUsersRead,ACL_AllUsersWrite,OverallPublicStatus
+13bf5920-a09f-47bc-a75a-394a09f18d6a,eu-west-1,FALSE-VULNERABLE,No Policy,FALSE,FALSE,"FALSE"
+c67fa6bd-2fd5-4bc5-825d-587fb535bf2e,eu-west-1,TRUE,No Policy,FALSE,FALSE,"FALSE"
+```
+
+It will also save the results shown above to the `s3_full_public_access_audit.csv` file:
+
+``` csv
+BucketName,Region,PAB_FullyRestricted,Policy_IsPublic,ACL_AllUsersRead,ACL_AllUsersWrite,OverallPublicStatus
+13bf5920-a09f-47bc-a75a-394a09f18d6a,eu-west-1,FALSE-VULNERABLE,No Policy,FALSE,FALSE,"FALSE"
+c67fa6bd-2fd5-4bc5-825d-587fb535bf2e,eu-west-1,TRUE,No Policy,FALSE,FALSE,"FALSE"
+```
