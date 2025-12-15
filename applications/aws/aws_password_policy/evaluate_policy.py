@@ -151,16 +151,10 @@ def main() -> None:
         result = evaluate(expected, actual, typ)
 
         # Normalise booleans for nicer CSV output
-        actual_str = (
-            str(actual).lower()
-            if isinstance(actual, bool)
-            else str(actual)
-        )
+        actual_str = str(actual).lower() if isinstance(actual, bool) else str(actual)
         expected_str = "" if expected is None else str(expected).lower()
 
-        csv_rows.append(
-            [rule_no, friendly, expected_str, actual_str, result]
-        )
+        csv_rows.append([rule_no, friendly, expected_str, actual_str, result])
 
     # --------------------------------------------------------------
     # 3. Write the CSV file (timestamped)
@@ -180,4 +174,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     import datetime  # imported here to keep the top of file tidy
+
     main()
