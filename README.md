@@ -1,4 +1,4 @@
-# IT Audit Automation
+# Audit Tools
 
 **Audit Tools** is a collection of open-source Python scripts and related resources intended to support auditors, risk professionals, and data analysts in automating common audit procedures and analyses.
 
@@ -21,7 +21,7 @@ These tools are intended to be straightforward and applicable across a range of 
 **Clone the Repository**
 
 ```bash
-git clone https://github.com/ccleberg/audit-tools
+git clone https://github.com/audit-labs/audit-tools
 cd audit-tools
 ```
 
